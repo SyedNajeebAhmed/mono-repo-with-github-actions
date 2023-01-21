@@ -1,1 +1,1 @@
-packaging-demo module
+packaging and publishing module
