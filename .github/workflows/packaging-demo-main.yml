@@ -34,7 +34,7 @@ jobs:
       matrix:
         module_name: ${{ fromJSON(needs.changes.outputs.changed_modules) }}
     env:
-      working-directory: ./${{ matrix.module_name }}
+      working-directory: ${{ matrix.module_name }}
     defaults:
       run:
         working-directory: ${{ env.working-directory }}
