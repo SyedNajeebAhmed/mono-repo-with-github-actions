@@ -1,1 +1,1 @@
-packaging and publishing module to aws code-artifact repo
+packaging using poetry and publishing module to aws code-artifact repo
