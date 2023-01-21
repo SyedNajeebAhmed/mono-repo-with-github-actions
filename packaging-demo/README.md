@@ -1,1 +1,1 @@
-packaging and publishing module to aws code-artifact
+packaging and publishing module to aws code-artifact repo

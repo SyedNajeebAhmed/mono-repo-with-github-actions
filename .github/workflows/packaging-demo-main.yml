@@ -34,13 +34,11 @@ jobs:
       matrix:
         module_name: ${{ fromJSON(needs.changes.outputs.changed_modules) }}
     env:
-      working-directory: ${{ matrix.module_name }}
+      working-directory: ./${{ matrix.module_name }}
     defaults:
       run:
-        working-directory: ./${{ env.working-directory }}
+        working-directory: ${{ env.working-directory }}
     steps:
-    - name: check working-directory
-      run: pwd
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
       with:
