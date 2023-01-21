@@ -28,14 +28,13 @@ jobs:
   Publish-Package-CodeArtifact:
     needs: changed_modules
     if: ${{ needs.changed_modules.outputs.names != '[]' }}
-    name: packaging ${{matrix.name}}
+    name: package and publish
     runs-on: ubuntu-latest
     strategy:
-      max-parallel: 1
       matrix:
-        name: ${{ fromJSON(needs.changed_modules.outputs.names) }}
+        module_name: ${{ needs.changed_modules.outputs.names }}
     env:
-      working-directory: ./${{ matrix.name }}
+      working-directory: ./${{ matrix.module_name }}
     defaults:
       run:
         working-directory: ${{ env.working-directory }}
